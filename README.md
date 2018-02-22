@@ -27,3 +27,8 @@ Project Settings の各項目を開くことができるツールバーが表示
 
 Unity エディタのどこかにドッキングしておくと、  
 いつでも簡単に Project Settings の各項目を開けるようになります  
+
+# 使用素材
+
+「ProjectSettingsToolbar」は「Visual Studio Image Library」を使用しています  
+https://www.microsoft.com/en-us/download/details.aspx?id=35825
