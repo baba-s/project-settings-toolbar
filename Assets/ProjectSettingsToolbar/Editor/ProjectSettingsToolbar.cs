@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 public sealed class ProjectSettingsToolbar : EditorWindow
@@ -39,8 +40,10 @@ public sealed class ProjectSettingsToolbar : EditorWindow
 		new ButtonData( "Script Execution Order"	),
 	};
 
+	private string m_dir;
+
 	[MenuItem( "Window/Project Settings Toolbar" )]
-	private static void Hoge()
+	private static void Init()
 	{
 		var win = GetWindow<ProjectSettingsToolbar>( TITLE );
 
@@ -64,7 +67,7 @@ public sealed class ProjectSettingsToolbar : EditorWindow
 		foreach ( var n in BUTTON_DATA_LIST )
 		{
 			var command = n.m_command;
-			var path = string.Format( "Assets/ProjectSettingsToolbar/Editor/Textures/{0}.png", command );
+			var path = string.Format( "{0}/Textures/{1}.png", m_dir, command );
 			var image = AssetDatabase.LoadAssetAtPath<Texture2D>( path );
 			var content = new GUIContent( image, command );
 			if ( GUILayout.Button( content, BUTTON_OPTIONS ) )
@@ -75,5 +78,12 @@ public sealed class ProjectSettingsToolbar : EditorWindow
 		}
 
 		EditorGUILayout.EndHorizontal();
+	}
+
+	private void OnEnable()
+	{
+		var mono = MonoScript.FromScriptableObject( this );
+		var path = AssetDatabase.GetAssetPath( mono );
+		m_dir = Path.GetDirectoryName( path );
 	}
 }
