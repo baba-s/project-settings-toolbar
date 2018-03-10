@@ -1,4 +1,4 @@
-日本語の Readme はこちら：
+[日本語の Readme はこちら](https://github.com/baba-s/project-settings-toolbar/blob/master/README%20_JP.md)  
 
 # ProjectSettingsToolbar
 
@@ -22,7 +22,7 @@ When you select "Window > Project Settings Toolbar" in the Unity menu,
 
 ![](https://raw.githubusercontent.com/baba-s/project-settings-toolbar/master/Screenshots/0002.png)
 
-A tool bar is displayed that allows you to open each item of Project Settings.
+A tool bar is displayed that allows you to open each item of Project Settings.  
 Then, by pressing each button, you can open items associated with it.  
 
 ![](https://raw.githubusercontent.com/baba-s/project-settings-toolbar/master/Screenshots/0003.png)
